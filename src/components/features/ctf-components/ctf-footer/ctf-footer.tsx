@@ -13,7 +13,6 @@ import {
   getLinkDisplayText,
   getLinkHrefPrefix,
 } from '@src/components/features/ctf-components/ctf-navigation/utils';
-import { LanguageSelector } from '@src/components/features/language-selector';
 import { Link } from '@src/components/shared/link';
 import { useContentfulContext } from '@src/contentful-context';
 import Logo from '@src/icons/logo-tagline.svg';
@@ -226,7 +225,6 @@ export const CtfFooter = (props: FooterFieldsFragment) => {
   const footerContent = props.items[0];
 
   const { t } = useTranslation();
-  const { locale } = useContentfulContext();
   const inspectorMode = useContentfulInspectorMode();
 
   const renderMenuGroupLinks = (menuGroup, listClassName) => {
@@ -251,56 +249,9 @@ export const CtfFooter = (props: FooterFieldsFragment) => {
   };
 
   const classes = useStyles();
-  const containerProps = footerContent?.sys?.id
-    ? inspectorMode({
-        entryId: footerContent.sys.id,
-        fieldId: 'menuItems',
-        locale,
-      })
-    : undefined;
 
   return (
     <>
-      <Container {...containerProps} maxWidth={false} className={classes.footerContainer}>
-        <footer className={classes.footer}>
-          {footerContent?.menuItemsCollection?.items?.length && (
-            <nav role="navigation" className={classes.menuWrapper}>
-              {footerContent.menuItemsCollection.items.map(
-                menuItem =>
-                  menuItem && (
-                    <div key={menuItem.sys.id} className={classes.menuColumn}>
-                      <ul className={classes.menu}>
-                        <li>
-                          <p
-                            className={classes.menuItem}
-                            {...inspectorMode({
-                              entryId: menuItem.sys.id,
-                              fieldId: 'groupName',
-                              locale,
-                            })}
-                          >
-                            {menuItem.groupName}
-                          </p>
-                          {menuItem.featuredPagesCollection && (
-                            <ul className={classes.submenu}>
-                              {renderMenuGroupLinks(
-                                menuItem.featuredPagesCollection,
-                                classes.submenuItem,
-                              )}
-                            </ul>
-                          )}
-                        </li>
-                      </ul>
-                    </div>
-                  ),
-              )}
-            </nav>
-          )}
-          <section className={classes.footerEndSection}>
-            <LanguageSelector />
-          </section>
-        </footer>
-      </Container>
       <Container maxWidth={false} className={classes.footerCorporateContainer}>
         <section className={classes.footerCorporate}>
           <div className={classes.corporateLogoMenu}>
