@@ -11,7 +11,7 @@ export const FormatCurrency = ({
   value,
   locale,
   style = 'currency',
-  currency = 'EUR',
+  currency = 'USD',
 }: FormatCurrencyProps) => {
   const { locale: localeFromRouter } = useContentfulContext();
 
