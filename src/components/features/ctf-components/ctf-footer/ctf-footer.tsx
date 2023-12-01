@@ -126,7 +126,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginTop: '0.2rem',
     [theme.breakpoints.up('md')]: {
       flexShrink: 0,
-      width: '38.4rem',
+      width: '22.4rem',
     },
   },
   corporateLogo: {
