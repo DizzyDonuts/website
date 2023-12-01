@@ -81,7 +81,6 @@ const CustomApp = ({
       <ContentfulContentProvider router={router}>
         <LivePreviewProvider>
           <QueryClientProvider client={queryClient}>
-            <ReactQueryDevtools initialIsOpen={false} />
             <StyledEngineProvider injectFirst>
               <ThemeProvider theme={colorfulTheme}>
                 <Hydrate state={dehydratedState}>
