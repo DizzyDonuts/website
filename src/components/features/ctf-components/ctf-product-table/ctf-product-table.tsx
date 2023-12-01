@@ -397,8 +397,8 @@ export const CtfProductTable = (props: ProductTableFieldsFragment) => {
                           </Typography>
                         ) : (
                           <Typography variant="h2" component="span" className={classes.priceUpper}>
+                            <span className={classes.priceAddition}>Starting at </span>
                             <FormatCurrency value={product.price} />
-                            <span className={classes.priceAddition}>/{t('time.month')}</span>
                           </Typography>
                         )}
                       </div>
@@ -460,8 +460,8 @@ export const CtfProductTable = (props: ProductTableFieldsFragment) => {
                               fieldId: 'price',
                             })}
                           >
+                            <span className={classes.priceAddition}>Starting at </span>
                             <FormatCurrency value={product.price} />
-                            <span className={classes.priceAddition}>/{t('time.month')}</span>
                           </Typography>
                         )}
                       </div>
