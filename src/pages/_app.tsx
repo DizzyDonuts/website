@@ -76,6 +76,7 @@ const CustomApp = ({
         <meta key="og:image:width" property="og:image:width" content="1200" />
         <meta key="og:image:height" property="og:image:height" content="630" />
         <meta key="og:type" property="og:type" content="website" />
+        <meta name="google-site-verification" content="rKDsw9b--Rs_dwRLDSrer589Ckmj01SErtn_EQWWfbo" />
       </Head>
 
       <ContentfulContentProvider router={router}>
